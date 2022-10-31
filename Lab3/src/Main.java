@@ -19,6 +19,9 @@ public class Main {
     }
 
     public static void main(String[] args) {
-        run("IO/p1.txt");
+        run("Input_Output/p1.txt");
+        run("Input_Output/p2.txt");
+        run("Input_Output/p3.txt");
+        run("Input_Output/p1err.txt");
     }
 }

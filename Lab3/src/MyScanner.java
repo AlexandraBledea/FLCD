@@ -74,15 +74,22 @@ public class MyScanner {
             switch (t) {
                 case "\"":
                     if (isStringConstant) {
+                        createdString.append(t);
                         resultedTokens.add(new Pair<>(createdString.toString(), numberLine));
                         createdString = new StringBuilder();
+                    }else {
+                        createdString.append(t);
                     }
                     isStringConstant = !isStringConstant;
                     break;
                 case "'":
                     if (isCharConstant) {
+                        createdString.append(t);
                         resultedTokens.add(new Pair<>(createdString.toString(), numberLine));
                         createdString = new StringBuilder();
+                    }
+                    else {
+                        createdString.append(t);
                     }
                     isCharConstant = !isCharConstant;
                     break;
@@ -120,7 +127,7 @@ public class MyScanner {
                 this.pif.add(new Pair<>(token, new Pair<>(-1, -1)), 3);
             } else if(this.separators.contains(token)){
                 this.pif.add(new Pair<>(token, new Pair<>(-1, -1)), 4);
-            } else if(Pattern.compile("^0|[-|+][1-9]([0-9])*|'[1-9]'|'[a-zA-Z]'|\"[0-9]*[a-zA-Z]*\"$").matcher(token).matches()) {
+            } else if(Pattern.compile("^0|[-|+][1-9]([0-9])*|'[1-9]'|'[a-zA-Z]'|\"[0-9]*[a-zA-Z ]*\"$").matcher(token).matches()) {
                 this.symbolTable.add(token);
                 this.pif.add(new Pair<>(token, symbolTable.findPositionOfTerm(token)), 0);
             }

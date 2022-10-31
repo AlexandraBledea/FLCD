@@ -34,4 +34,9 @@ public class SymbolTable {
         return hashTable.add(term);
     }
 
+    @Override
+    public String toString(){
+        return this.hashTable.toString();
+    }
+
 }

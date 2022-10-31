@@ -18,7 +18,7 @@ if(c > max) {
 	max = c;
 }
 
-print("Maximum is ");
-print(max);
+write('a');
+write(max);
 
 

@@ -68,7 +68,16 @@ public class HashTable {
 
     @Override
     public String toString() {
-        return "SymbolTable { " + "elements=" + table + ", size = " + size + " }";
+        StringBuilder computedString = new StringBuilder();
+        for(int i = 0; i < this.table.size(); i++){
+            if(this.table.get(i).size() > 0){
+                computedString.append(i);
+                computedString.append(" - ");
+                computedString.append(this.table.get(i));
+                computedString.append("\n");
+            }
+        }
+        return computedString.toString();
     }
 
 }
