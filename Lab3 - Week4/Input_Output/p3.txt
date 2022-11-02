@@ -2,12 +2,12 @@ int n;
 int x;
 int sum = 0;
 
-read(n);
+read ( n );
 
-while(n > 0) {
-	read(x);
+while ( n > 0 ) {
+	read ( x );
 	sum = sum + x;
 	n = n - 1;
 }
 
-print(sum);
+print ( sum );
