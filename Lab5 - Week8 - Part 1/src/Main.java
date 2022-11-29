@@ -51,6 +51,7 @@ public class Main {
                 case 4:
                     System.out.println("\n\nAll productions: ");
                     grammar.getProductions().forEach((lhs, rhs)-> System.out.println(lhs + " -> " + rhs));
+                    break;
                 case 5:
                     Scanner sc= new Scanner(System.in); //System.in is a standard input stream.
                     System.out.print("Enter a non-terminal: ");
@@ -58,7 +59,11 @@ public class Main {
                     System.out.println("\n\n Productions for the non-terminal: " + nonTerminal);
                     List<String> key = new ArrayList<>();
                     key.add(nonTerminal);
-                    grammar.getProductions().get(key).forEach((rhs) -> System.out.println(key + " -> " + rhs));
+                    try {
+                        grammar.getProductions().get(key).forEach((rhs) -> System.out.println(key + " -> " + rhs));
+                    } catch (NullPointerException e) {
+                        System.out.println("This is not a defined non-terminal");
+                    }
                     break;
                 case 6:
                     System.out.println("\n\nIs it a context free grammar (CFG) ? " + grammar.isCFG());

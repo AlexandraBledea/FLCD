@@ -71,7 +71,7 @@ public class Grammar {
      * @return true if the grammar is a CFG, false otherwise
      */
     private boolean checkIfCFG() {
-        if (! this.nonTerminals.contains(this.startingSymbol)) {
+        if (!this.nonTerminals.contains(this.startingSymbol)) {
             return false;
         }
 
@@ -83,7 +83,7 @@ public class Grammar {
 
             for (List<String> possibleNextMoves : this.productions.get(leftHandSide)) {
                 for (String possibleNextMove : possibleNextMoves) {
-                    if (!(this.nonTerminals.contains(possibleNextMove) || this.terminals.contains(possibleNextMove) || possibleNextMove.equals(this.EPSILON))) {
+                    if (!this.nonTerminals.contains(possibleNextMove) && !this.terminals.contains(possibleNextMove) && !possibleNextMove.equals(this.EPSILON)) {
                         return false;
                     }
                 }
