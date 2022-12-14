@@ -31,6 +31,11 @@ public class OutputTree {
         return this.root;
     }
 
+    /**
+     * With this method we start the generation of the parse tree
+     * @param inputSequence - the list which contains the production numbers (represents actually the output band from the parse algorithm)
+     * @return - the root of the tree
+     */
     public ParsingTreeRow generateTreeFromSequence(List<Integer> inputSequence){
         int productionIndex = inputSequence.get(0);
 
@@ -46,6 +51,16 @@ public class OutputTree {
     }
 
 
+    /**
+     * With this method we build recursively each node from the parse tree
+     * If it is a terminal, we try to set its right sibling as well
+     * If it is a non-terminal, we try to set its right sibling and its left child as well
+     * @param level - the level in the tree
+     * @param parent - the parent of the current node from the tree
+     * @param currentContent - the current elements which compose the production (So if we had A -> a b, then the currentContent is [a, b])
+     * @param inputSequence - the list with the production numbers from the output band of the parse algorithm
+     * @return - the newly created node
+     */
     public ParsingTreeRow buildRecursive(int level, ParsingTreeRow parent, List<String> currentContent, List<Integer> inputSequence){
         if(currentContent.isEmpty() || this.indexInInput >= inputSequence.size() + 1){
             return null;
@@ -147,6 +162,11 @@ public class OutputTree {
         bw.close();
     }
 
+    /**
+     * With this method we compute the order in which the nodes should be in the parsing tree
+     * And we effectively create it
+     * @param node - the node from which we start the construction (the root in our case)
+     */
     public void createList(ParsingTreeRow node){
         if(node == null)
             return;

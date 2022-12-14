@@ -53,7 +53,6 @@ public class LR {
 
     /**
      * With this method we compute the closure for an item (an item being of the form [A->alpha.beta])
-     *
      * @param item - the analysis element
      * @return - the closure for item given as input
      */
@@ -240,6 +239,13 @@ public class LR {
     }
 
 
+    /**
+     * With this method we parse the input sequence and find if the sequence is accepted by the grammar or not
+     * @param inputStack - the input stack which contains actually all the elements from the sequence
+     * @param parsingTable - the parsing table which we will use in order to parse
+     * @param filePath - the file path where we will display the parse result
+     * @throws IOException - in case of input output exception for writing/reading the file
+     */
     public void parse(Stack<String> inputStack, ParsingTable parsingTable, String filePath) throws IOException {
         Stack<Pair<String, Integer>> workingStack = new Stack<>();
         Stack<String> outputStack = new Stack<>();
