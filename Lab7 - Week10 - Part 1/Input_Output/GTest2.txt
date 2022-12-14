@@ -1,0 +1,5 @@
+S A
+a b
+S
+S->a
+A->B|S

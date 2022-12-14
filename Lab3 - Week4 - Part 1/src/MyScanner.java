@@ -16,7 +16,7 @@ public class MyScanner {
     );
 
     private final ArrayList<String> reservedWords = new ArrayList<>(
-            List.of("read", "write", "if", "else", "for", "while", "int", "string", "char", "return", "start", "array")
+            List.of("mod", "add", "sub", "div", "mul", "read", "write", "if", "else", "for", "while", "int", "string", "char", "return", "START", "array", "END.", "start")
     );
 
     private final String filePath;
@@ -186,12 +186,12 @@ public class MyScanner {
                 this.pif.add(new Pair<>(token, new Pair<>(-1, -1)), 4);
             } else if(Pattern.compile("^0|[-|+][1-9]([0-9])*|'[1-9]'|'[a-zA-Z]'|\"[0-9]*[a-zA-Z ]*\"$").matcher(token).matches()) {
                 this.symbolTable.add(token);
-                this.pif.add(new Pair<>(token, symbolTable.findPositionOfTerm(token)), 0);
+                this.pif.add(new Pair<>("CONST", symbolTable.findPositionOfTerm(token)), 0);
 //                this.pif.add(new Pair<>("const", symbolTable.findPositionOfTerm(token)), 0);
             }
             else if(Pattern.compile("^([a-zA-Z]|_)|[a-zA-Z_0-9]*").matcher(token).matches()) {
                 this.symbolTable.add(token);
-                this.pif.add(new Pair<>(token, symbolTable.findPositionOfTerm(token)), 1);
+                this.pif.add(new Pair<>("IDENTIFIER", symbolTable.findPositionOfTerm(token)), 1);
 //                this.pif.add(new Pair<>("ident", symbolTable.findPositionOfTerm(token)), 1);
             } else {
                 Pair<Integer, Integer> pairLineColumn = t.getSecond();

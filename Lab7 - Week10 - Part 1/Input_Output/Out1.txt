@@ -1,0 +1,12 @@
+ACCEPTED
+Production strings: [S -> [a, A], A -> [b, A], A -> [b, A], A -> [c]]
+Production number: [0, 1, 1, 2]
+The output tree: 
+ParsingTree.ParsingTreeRow: index = 0, info = S, leftChild = 1, rightChild = -1, parent = -1, level = 0
+ParsingTree.ParsingTreeRow: index = 1, info = a, leftChild = -1, rightChild = 2, parent = 0, level = 1
+ParsingTree.ParsingTreeRow: index = 2, info = A, leftChild = 3, rightChild = -1, parent = 0, level = 1
+ParsingTree.ParsingTreeRow: index = 3, info = b, leftChild = -1, rightChild = 4, parent = 2, level = 2
+ParsingTree.ParsingTreeRow: index = 4, info = A, leftChild = 5, rightChild = -1, parent = 2, level = 2
+ParsingTree.ParsingTreeRow: index = 5, info = b, leftChild = -1, rightChild = 6, parent = 4, level = 3
+ParsingTree.ParsingTreeRow: index = 6, info = A, leftChild = 7, rightChild = -1, parent = 4, level = 3
+ParsingTree.ParsingTreeRow: index = 7, info = c, leftChild = -1, rightChild = -1, parent = 6, level = 4
