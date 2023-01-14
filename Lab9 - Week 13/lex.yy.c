@@ -291,10 +291,10 @@ static yyconst short int yy_accept[109] =
     {   0,
         0,    0,   48,   47,   40,   41,   47,   35,   17,   34,
        27,   28,   15,   13,   33,   14,   16,   37,   37,   31,
-       32,   22,   24,   23,   36,   29,   30,   36,   36,   36,
+       32,   20,   24,   21,   36,   29,   30,   36,   36,   36,
        36,   36,   36,   36,   36,   25,   47,   26,   40,   41,
-       21,    0,   46,   46,    0,   43,   37,   46,   37,   42,
-       42,   37,   37,   18,   20,   19,   36,   36,   36,   36,
+       23,    0,   46,   46,    0,   43,   37,   46,   37,   42,
+       42,   37,   37,   18,   22,   19,   36,   36,   36,   36,
        36,    6,   36,   36,   36,   36,   36,   38,    0,   39,
        44,   37,   37,   44,   37,   36,   36,   36,    8,    1,
        36,   36,   36,   36,   36,   36,    0,   45,   44,   36,
@@ -772,7 +772,7 @@ YY_RULE_SETUP
 case 14:
 YY_RULE_SETUP
 #line 33 "lang.lxi"
-{printf("Operator %s\n", yytext); return minus;}
+{printf("Operator %s\n", yytext); return  minus;}
 	YY_BREAK
 case 15:
 YY_RULE_SETUP
@@ -802,22 +802,22 @@ YY_RULE_SETUP
 case 20:
 YY_RULE_SETUP
 #line 39 "lang.lxi"
-{printf("Operator %s\n", yytext); return equal;}
+{printf("Operator %s\n", yytext); return  less;}
 	YY_BREAK
 case 21:
 YY_RULE_SETUP
 #line 40 "lang.lxi"
-{printf("Operator %s\n", yytext); return different;}
+{printf("Operator %s\n", yytext); return more;}
 	YY_BREAK
 case 22:
 YY_RULE_SETUP
 #line 41 "lang.lxi"
-{printf("Operator %s\n", yytext); return less;}
+{printf("Operator %s\n", yytext); return equal;}
 	YY_BREAK
 case 23:
 YY_RULE_SETUP
 #line 42 "lang.lxi"
-{printf("Operator %s\n", yytext); return more;}
+{printf("Operator %s\n", yytext); return different;}
 	YY_BREAK
 case 24:
 YY_RULE_SETUP
